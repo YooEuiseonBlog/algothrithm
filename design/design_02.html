@@ -1,0 +1,51 @@
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="./design_02.js"></script>
+<link href="./design_02.css" rel="stylesheet"/>
+<div class="submenu">
+
+   <c:if test="${logId!='master'}">
+      <a class="main_codylink" href="${url}/cody/main_cody">코디추천</a>
+   </c:if>
+   <c:if test="${logId=='master'}">
+      <a href="${url}/master/master_modify_cody">코디관리</a>
+   </c:if>
+
+   <c:if test="${logId != 'master' }">
+      <a href="${url}/food/main_food">음식추천</a>
+   </c:if>
+   <c:if test="${logId == 'master' }">
+      <a href="${url}/master/master_food">음식관리</a>
+   </c:if>
+</div>
+<div class="container">
+   <div id="fullpage">
+      <div class="quick">
+         <ul></ul>
+      </div>
+      <div class="fullsection full1" pageNum="1">
+         <div id="weather" class="rotate-center"
+            onmouseenter="return mouseenter" ondblclick="dbmouse()">
+            <span>Click Me ↓</span> <span></span> <span></span>
+         </div>
+         <section id="section0" class="demo">
+           <span></span>
+           <p>Scroll Down</p>
+         </section>
+      </div>
+
+      <div class="fullsection full2" pageNum="2">
+         <div class="container">
+            <a class="main_codylink" href="${url}/cody/main_cody" >
+            <div class="one-half left"></div>
+            </a>
+            
+            <a href="${url}/food/main_food">
+            <div class="one-half right"></div>
+            </a>
+            
+         </div>
+      </div>
+   </div>
+</div>
+</body>
+</html>

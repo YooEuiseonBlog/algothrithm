@@ -1,0 +1,290 @@
+@font-face {
+    font-family: 'Cafe24Simplehae';
+    src:
+       url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Simplehae.woff')
+       format('woff');
+    font-weight: normal;
+    font-style: normal;
+ }
+ 
+ *, *:before, *:after {
+    box-sizing: border-box;
+ }
+ 
+ @keyframes blink-effect { 50% {
+    opacity: 0;
+ }
+ 
+ }
+ html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-y: hidden;
+    font-family: 'Cafe24Simplehae';
+ }
+ 
+ #fullpage {
+    position: relative;
+    top: 0px;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+ }
+ 
+ .fullsection {
+    width: 100%;
+    height: 105%;
+    position: relative;
+ }
+ 
+ ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+ }
+ 
+ h1 {
+    color: rgb(74, 74, 74);
+    position: relative;
+    position: absolute;
+    left: 50%;
+    top: 12%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    text-shadow: 0 0 10px #FFFFFF;
+    font-family: 'Cafe24Simplehae';
+    font-weight: bolder;
+ }
+ 
+ h1:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 4px;
+    left: 0;
+    bottom: -8px;
+    background: rgb(74, 74, 74);
+    transition: 800ms all ease-in-out;
+ }
+ 
+ .container {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+ }
+ 
+ .container .one-half {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    
+ }
+ 
+ 
+ 
+ .container .one-half.left {
+    left: 0;
+    
+    background-size: cover;
+    background-position: right center; 
+    background-image: linear-gradient( rgba(157, 157, 157, 0.5), rgba(0, 0, 0, 0.5) ), 
+    url(img/코디어때.png);
+    
+    
+ }
+ 
+ .container .one-half.left:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    
+ }
+ 
+ 
+ .container .one-half.right {
+    right: 0;
+    background-size: cover;
+    background-position: left center; 
+    background-image: linear-gradient( rgba(157, 157, 157, 0.5), rgba(0, 0, 0, 0.5) ), 
+    url(img/음식어때.png);
+    
+ }
+ 
+ .container .one-half.right:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+ }
+ 
+ .container .one-half.left, 
+ .container .one-half.right {
+    transition: 1800ms all ease-in-out;
+    
+ }
+ 
+ .container .one-half.left:before, 
+ .container .one-half.right:before {
+    transition: 1800ms all ease-in-out;
+ }
+ 
+ .container.left-is-hovered .left {
+    width: 85%;
+    background: url(img/코디어때.png) center center no-repeat;
+    background-size: cover;
+ 
+ }
+ 
+ .container.left-is-hovered .right {
+    width: 15%;
+ }
+ 
+ .container.left-is-hovered .right:before {
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 2;
+ }
+ 
+ .container.right-is-hovered .right {
+    width: 85%;
+    background: url(img/음식어때.png) center center no-repeat;
+    background-size: cover;
+ }
+ 
+ .container.right-is-hovered .left {
+    width: 15%;
+ }
+ 
+ .container.right-is-hovered .left:before {
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 2;
+ }
+ 
+ #weather {
+    position: fixed;
+    text-align: center;
+    width: 400px;
+    height: 400px; top : 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%; left : 50%; transform : translate( -50%, -50%);
+    font-weight: 500;
+ }
+ 
+ #weather span:first-child {
+    animation: blink-effect 1s step-end infinite;
+ }
+ 
+ #weather span:nth-child(2n) {
+    display: block;
+    font-size: 58px;
+ }
+ 
+ #weather span:last-child {
+    display: inline-block;
+    font-size: 24px;
+ }
+ 
+ .submenu a:link {
+    text-decoration: none;
+    color: #333333;
+ }
+ 
+ .submenu a:visited {
+    text-decoration: none;
+    color: #333333;
+ }
+ 
+ .submenu a:active {
+    text-decoration: none;
+    color: #333333;
+ }
+ 
+ .submenu a:hover {
+    text-decoration: none;
+    color: #FFFAE8;
+    transform: scale(1.18) rotate(-5deg);
+ }
+ 
+ .submenu {
+    display: flex;
+    justify-content: space-around;
+    visibility: hidden;
+    align-items: center;
+ }
+ 
+ .submenu a {
+    text-align: center;
+    font-size: 28px;
+    color: #333333;
+    transition: all 400ms ease-in;
+ }
+ 
+ #scrollimg {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    bottom: -68%;
+    left: 48%;
+ }
+ 
+ #section0 span {
+   position: absolute;
+   bottom: 32%;
+   left: 50%;
+   width: 30px;
+   height: 30px;
+   margin-left: -12px;
+   border-left: 4px solid black;
+   border-bottom: 4px solid black;
+   -webkit-transform: rotate(-45deg);
+   transform: rotate(-45deg);
+   -webkit-animation: sdb05 1.5s infinite;
+   animation: sdb05 1.5s infinite;
+ }
+ 
+ #section0 p {
+   position: absolute;
+   bottom: 20%;
+   left: 50%;
+   font-size: 24px;
+   margin-left: -12px;
+   transform: translate(-48px, -30px);
+ 
+ }
+ 
+ 
+ @-webkit-keyframes sdb05 {
+   0% {
+     -webkit-transform: rotate(-45deg) translate(0, 0);
+     opacity: 0;
+   }
+   50% {
+     opacity: 1;
+   }
+   100% {
+     -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+     opacity: 0;
+   }
+ }
+ 
+ @keyframes sdb05 {
+   0% {
+     transform: rotate(-45deg) translate(0, 0);
+     opacity: 0;
+   }
+   50% {
+     opacity: 1;
+   }
+   100% {
+     transform: rotate(-45deg) translate(-20px, 20px);
+     opacity: 0;
+   }
+ }
