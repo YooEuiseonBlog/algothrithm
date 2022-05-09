@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="./real.js"></script>
+    <link rel="stylesheet" href="./real.css"/>
+</head>
+<body>
+    <nav class="sidenav">
+        <ul class="main-buttons">
+           <li><a href="${url}/codyListAll">ALL</a></li>
+           <li><a href="${url}/codyGenderList?sex=m">MEN</a></li>
+           <li><a href="${url}/codyGenderList?sex=f">WOMEN</a></li>
+           <li>STYLE <i class="fa-solid fa-caret-down"></i>
+              <ul class="hidden">
+                 <li><a href="${url}/codyStyleList?style=casual">Casual</a></li>
+                 <li><a href="${url}/codyStyleList?style=modern">Modern</a></li>
+                 <li><a href="${url}/codyStyleList?style=office">Office</a></li>
+                 <li><a href="${url}/codyStyleList?style=street">Street</a></li>
+                 <li><a href="${url}/codyStyleList?style=walk">Walk</a></li>
+                 <li><a href="${url}/codyStyleList?style=special">Special</a></li>
+              </ul>
+           </li>
+        </ul>
+     </nav>
+     <div id="fullpage">
+        <div class="quick">
+           <ul></ul>
+        </div>
+        <div class="fullsection full1" pageNum="1">
+           <img class="fullImg" src="${url}/img/cody_maingif.gif/" alt="">
+        </div>
+  
+        <c:forEach var="vo" items="${vo}" varStatus="status" end="4">
+           <div class="fullsection full${status.index+2}"
+              pageNum="${status.index+2}">
+              <img class="codyImg" src="${url}/img/codyimg/codyupload/${vo.cname}"
+                 alt="">
+           </div>
+        </c:forEach>
+  
+        <div class="fullsection full7" pageNum="7">
+           <img class="fullImg" src="${url}/img/thankyou.png/" alt="">
+        </div>
+     </div>
+</body>
+</html>
+
